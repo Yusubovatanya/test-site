@@ -1,0 +1,138 @@
+@import "../theme/styles/style.scss";
+
+.header {
+
+  .header-toolbar {
+
+    .companyName {
+      font-size: 150%;
+
+      .logo {
+        width: 134px;
+        height: 24px;
+        background: url(../../assets/logo/logo.svg) no-repeat center/contain;
+      }
+    }
+
+    .menu-icon {
+      color: $secondary;
+      width: 23px;
+      height: 22px;
+      background: url(../../assets/icons/line-menu.svg) no-repeat center/contain;
+    }
+
+    .nav-links {
+      width: 455px;
+
+      a {
+        min-width: auto;
+      }
+    }
+
+    .user-actions {
+      .nav {
+
+        .sing-out-link {
+
+          .sign-out-icon {
+            background: url(../../assets/icons/sign-out.svg);
+            width: 24px;
+            height: 20px;
+          }
+
+          &:hover {
+            .sign-out-icon {
+              background: url(../../assets/icons/cover-icon-user.png);
+            }
+          }
+        }
+
+        .nav-user {
+          text-align: right;
+          // width: 250px;
+        }
+
+        li {
+          margin-right: 15px;
+        }
+
+        li {
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+
+        .avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .mat-sidenav-container {
+    min-height: 93vh !important;
+
+    .mat-button-wrapper {
+      text-align: left;
+    }
+
+    .mat-sidenav-content {
+      font-size: 200%;
+      text-align: center;
+    }
+  }
+
+  .menu-button {
+    width: 23px;
+  }
+
+  @include breakpoint(xs) {
+    .sidenav {
+      width: 250px;
+      padding: 30px 15px;
+
+      .sidenav-user {
+        padding-bottom: 25px;
+        border-bottom: 1px solid #e1e1e1;
+
+        .user-name {
+          padding-top: 15px;
+        }
+
+        .avatar {
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+        }
+      }
+
+      .sidenav-menu {
+        padding-top: 15px;
+        ul {
+          li {
+            padding: 10px 0;
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint(sm) {
+    .sidenav {
+      width: 260px;
+    }
+  }
+}
+
+:host ::ng-deep .mat-button-focus-overlay,
+.mat-button-ripple.mat-ripple {
+  background: transparent;
+}
+
+:host ::ng-deep .mat-toolbar-row,
+.mat-toolbar-single-row {
+  padding: 0;
+  height: 64px;
+}

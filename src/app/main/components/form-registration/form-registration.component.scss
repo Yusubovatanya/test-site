@@ -1,0 +1,200 @@
+@import "../../../theme/styles/style.scss";
+
+@mixin field-status($color) {
+  border: 1px solid $color;
+}
+
+.register-form {
+  .top-form {
+    // margin-bottom: 10px;
+  }
+
+  .bottom-form {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+
+    .select-box {
+      position: relative;
+
+      .select-field {
+        position: relative;
+        @extend .input-field;
+        @include field-status($form-border);
+
+        .icon-position {
+          background: url("../../../../assets/icons/caret-down.svg") no-repeat;
+          background-position: center center;
+          width: 16px;
+          height: 10px;
+          margin-right: 18px;
+        }
+      }
+
+      .position-list {
+        position: absolute;
+        top: 0;
+        @extend .input-box;
+        background: $light;
+        border: 1px solid rgba(0, 0, 0, .03);
+        box-shadow: 0 2px 2px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .12);
+        z-index: 2;
+
+        ul {
+          li {
+            @extend .p-16;
+            padding: 13px 15px;
+            text-align: left;
+
+            &:hover {
+              background-color: $primary-hover-bg;
+            }
+          }
+        }
+      }
+    }
+
+    .upload-photo {
+      position: relative;
+
+      .label-photo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        color: #fff;
+        cursor: pointer;
+        @extend .input-box;
+
+        input[type="file"] {
+          position: absolute;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          border: 0;
+        }
+      }
+
+      .label-photo:after {
+        @extend .secondary-button;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: -1px;
+        right: -1px;
+        height: 56px;
+        box-sizing: border-box;
+
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+
+        @include breakpoint(xs) {
+          content: "";
+          background: url(../../../../assets/icons/upload.svg) no-repeat;
+          background-position: center center;
+          width: 56px;
+        }
+
+        @include breakpoint(sm) {
+          background: inherit;
+          content: "Upload";
+          width: 130px;
+        }
+      }
+    }
+  }
+
+
+}
+
+.form-field {
+  @include breakpoint(xs) {
+    max-width: inherit !important;
+    position: relative;
+    width: 100%;
+    padding-top: 35px;
+  }
+  @include breakpoint(sm) {
+    padding-top: 40px;
+   }
+}
+
+
+
+
+.input-field {
+  height: 56px;
+  @extend .input-box;
+}
+
+.input-box {
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.show-legend {
+  transform: scale(1) !important;
+}
+
+.error-legend {
+  transform: scale(1) !important;
+  @extend .error-text;
+}
+
+input::placeholder {
+  color: $disabled-text;
+  @extend .p-18;
+}
+
+.field-form {
+  display: block;
+  padding: 15px;
+  @extend .input-field;
+}
+
+.field-form:focus+.legend {
+  @extend .show-legend;
+}
+
+.field-enabled {
+  @include field-status($form-border);
+}
+
+.field-error {
+  @include field-status($warn)
+}
+
+.position-option {
+  @extend .p-18;
+  padding-left: 15px;
+}
+
+.active-option {
+  color: $primary;
+}
+
+.placeholder-text {
+  padding: 5px 15px;
+  text-align: left;
+  position: absolute;
+}
+
+.hide-position {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.legend {
+  position: absolute;
+  top: 35px;
+  z-index: 3;
+  padding: 0 5px;
+  margin-left: 14px;
+  background: #fff;
+  transition: transform .2s linear;
+  transform: scale(0);
+}

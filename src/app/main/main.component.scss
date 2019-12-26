@@ -1,0 +1,699 @@
+ @import "../theme/styles/style.scss";
+
+ //  banner
+ .banner-container {
+   @extend .p-18;
+ }
+
+ @include respond-above(xs) {
+   .banner {
+     background: url("../../assets/imgs/banner-bg/banner-bg-320x393.jpg") no-repeat;
+     background-size: cover;
+     background-position: center center;
+     height: 393px;
+     width: auto;
+
+     .banner-container {
+       //  margin: 0 auto;
+       text-align: center;
+       padding-top: 65px;
+
+       .banner-title {
+         width: auto;
+       }
+
+       .banner-button {
+         margin: 0 auto 20px;
+       }
+
+       .banner-text {
+         padding-top: 10px;
+         line-height: 22px;
+         margin-bottom: 35px;
+
+         p,
+         span {
+           font-size: 18px;
+         }
+       }
+     }
+   }
+
+ }
+
+ @include respond-above(sm) {
+   .banner {
+     background: url("../../assets/imgs/banner-bg/banner-bg-768x622.jpg") no-repeat;
+     background-size: cover;
+     background-position: center center;
+     height: 622px;
+     width: auto;
+
+     .banner-container {
+       text-align: left;
+       margin: 0;
+       padding-top: 110px;
+
+       .banner-title {
+         width: 395px;
+       }
+
+       .banner-button {
+         margin: 0;
+       }
+
+       .banner-text {
+         padding-top: 26px;
+         width: 390px;
+         margin-bottom: 40px;
+       }
+     }
+   }
+ }
+
+ @include respond-above(md) {
+   .banner {
+     background: url("../../assets/imgs/banner-bg/banner-bg-1204x723.jpg") no-repeat;
+     background-size: cover;
+     background-position: center center;
+     height: 725px;
+     width: auto;
+
+     .banner-container {
+       padding-top: 130px;
+
+       .banner-title {
+         width: 470px;
+       }
+
+       .banner-text {
+         width: 430px;
+         margin-bottom: 35px;
+
+         p,
+         span {
+           font-size: 20px;
+           line-height: 26px;
+         }
+       }
+     }
+   }
+ }
+
+ @include respond-above(lg) {
+   .banner {
+     background: url("../../assets/imgs/banner-bg/banner-bg-2560x676.jpg") no-repeat;
+     background-size: cover;
+     background-position: center center;
+     height: 676px;
+     width: auto;
+
+     .banner-container {
+
+       .banner-text {
+         width: 550px;
+         padding-top: 20px;
+       }
+
+       .banner-button {
+         margin: 0px;
+       }
+     }
+   }
+ }
+
+ // about me
+
+ .about-box {
+
+   @include breakpoint(xs) {
+
+     .acquainted-box {
+       margin-bottom: 65px;
+
+       .acquainted-content {
+         padding-top: 25px;
+
+         .acquainted-img {
+           background: url("../../assets/imgs/man-mobile.svg") no-repeat;
+           background-size: contain;
+           background-position: top center;
+           height: 216px;
+           width: 219px;
+           //  margin: 0 auto;
+         }
+       }
+     }
+   }
+
+   @include breakpoint(sm) {
+
+     .acquainted-box {
+       margin-bottom: 125px;
+
+       .acquainted-content {
+         padding-top: 50px;
+       }
+     }
+   }
+
+   @include breakpoint(md) {
+     padding-bottom: 95px;
+
+     .acquainted-box {
+       margin-bottom: 120px;
+
+       .acquainted-content {
+         padding-top: 30px;
+
+         .acquainted-img {
+           height: 285px;
+           width: 289px;
+         }
+       }
+     }
+   }
+
+   @include breakpoint(lg) {
+     .acquainted-box {
+       margin-bottom: 75px;
+
+       .acquainted-content {
+         padding-top: 50px;
+
+         .acquainted-img {
+           height: 285px;
+           width: 289px;
+         }
+       }
+     }
+   }
+
+   .acquainted-text {
+     @include breakpoint(xs) {
+       text-align: center;
+       padding-left: 0;
+       padding-top: 30px;
+
+       p {
+
+         &:nth-child(2) {
+           margin-bottom: 20px;
+         }
+
+         &:nth-child(3) {
+           margin-bottom: 15px;
+         }
+       }
+
+       .acquainted-title {
+         padding-bottom: 10px;
+       }
+
+       .link-sign-up {
+         font-size: 22px;
+       }
+     }
+
+     @include breakpoint(sm) {
+       text-align: left;
+       padding-left: 30px;
+       padding-top: 0;
+     }
+
+     @include breakpoint(md) {
+       .acquainted-title {
+         padding-top: 15px;
+       }
+
+       padding-left: 30px;
+     }
+
+     @include breakpoint(lg) {
+       p {
+
+         &:nth-child(3) {
+           margin-bottom: 10px;
+         }
+       }
+
+       .acquainted-title {
+         padding-top: 0;
+         padding-bottom: 5px
+       }
+     }
+   }
+
+   .relationships-box {
+
+     .relationships-main-title {
+       max-width: 555px;
+     }
+
+     @include respond-above(xs) {
+
+       .relationships-content {
+         padding-top: 30px;
+         padding-bottom: 40px;
+
+
+         .relationships-card {
+           margin-bottom: 30px;
+
+           .relationships-img-1 {
+             background: url("../../assets/imgs/html.svg") no-repeat;
+             height: 99px;
+             width: 88px;
+           }
+
+           .relationships-img-2 {
+             background: url("../../assets/imgs/css.svg") no-repeat;
+             height: 99px;
+             width: 88px;
+           }
+
+           .relationships-img-3 {
+             background: url("../../assets/imgs/javascript.svg") no-repeat;
+             height: 103px;
+             width: 90px;
+           }
+
+           .relationships-img {
+             background-size: contain;
+             background-position: center center;
+             margin: auto;
+           }
+
+           .relationships-text {
+             text-align: center;
+             padding-top: 10px;
+
+             .relationships-title {
+               margin-bottom: 5px;
+             }
+
+             .relationships-description-1,
+             .relationships-description-2,
+             .relationships-description-3 {
+               max-width: 280px;
+             }
+           }
+         }
+       }
+     }
+
+     @include respond-above(sm) {
+       .relationships-content {
+         padding-top: 45px;
+
+         .relationships-card {
+           margin-bottom: 45px;
+
+           .relationships-img-1 {
+             width: 98px;
+             height: 111px;
+
+           }
+
+           .relationships-img-2 {
+             width: 98px;
+             height: 111px;
+           }
+
+           .relationships-img-3 {
+             width: 100px;
+             height: 114px;
+           }
+
+           .relationships-img {
+             margin: 0;
+           }
+
+           .relationships-text {
+             text-align: left;
+             padding-top: 0;
+             padding-left: 30px;
+
+             .relationships-title {
+               margin-bottom: 10px;
+             }
+
+             .relationships-description-1,
+             .relationships-description-3,
+             .relationships-description-2 {
+               max-width: 465px;
+             }
+           }
+         }
+       }
+     }
+
+     @include respond-above(md) {
+       .relationships-content {
+
+         .relationships-card {
+           width: 290px;
+           margin-bottom: 0;
+
+           .relationships-text {
+             text-align: left;
+             padding-top: 25px;
+             padding-left: 0;
+
+             .relationships-title {
+               letter-spacing: -0.5px;
+             }
+
+             .relationships-description-1 {
+               max-width: 280px;
+             }
+
+             .relationships-description-3 {
+               max-width: 270px;
+             }
+
+             .relationships-description-2 {
+               max-width: 225px;
+             }
+           }
+         }
+       }
+     }
+
+     @include respond-above(lg) {
+       .relationships-content {
+
+         .relationships-card {
+           width: 100%;
+
+           .relationships-text {
+
+             .relationships-description-1,
+             .relationships-description-3 {
+               max-width: 360px;
+             }
+
+             .relationships-description-2 {
+               max-width: 320px;
+             }
+           }
+         }
+       }
+     }
+   }
+ }
+
+ // requirements
+ .requirements-box {
+   @include respond-above(xs) {
+
+     .requirements-bg {
+       background: url("../../assets/imgs/third-block-bg/third-block-bg-320x1031.jpg") no-repeat;
+       background-size: cover;
+       background-position: center center;
+       height: 1031px;
+       width: auto;
+
+       .requirements-container {
+
+         .requirements-title {
+           margin-bottom: 0;
+           text-align: center;
+         }
+
+         .requirements-img {
+           background: url("../../assets/imgs/man-laptop-v1.svg") no-repeat;
+           background-size: contain;
+           background-position: center center;
+           width: 257px;
+           height: 216px;
+           margin: 0 auto;
+         }
+
+         .requirements-content {
+           padding-top: 25px;
+
+           .requirements-text {
+             padding-top: 20px;
+
+             p {
+               padding-top: 25px;
+
+               &:nth-child(1) {
+                 padding-top: 0;
+               }
+             }
+           }
+         }
+       }
+     }
+   }
+
+   @include respond-above(sm) {
+
+     .requirements-bg {
+       background: url("../../assets/imgs/third-block-bg/third-block-bg-768x878.jpg") no-repeat;
+       height: 878px;
+       width: auto;
+
+       .requirements-container {
+
+         .requirements-title {
+           margin-bottom: 25px;
+           max-width: 440px;
+           //  margin: 0 auto;
+         }
+
+         .requirements-img {
+           background: url("../../assets/imgs/man-laptop-v2.svg") no-repeat;
+           background-position: top center;
+           width: 343px;
+           height: 407px;
+         }
+
+         .requirements-content {
+           padding-top: 20px;
+
+           .requirements-text {
+             padding-top: 0;
+
+             p {
+               padding-top: 20px;
+               max-width: 335px;
+               text-align: left;
+
+               &:nth-child(1) {
+                 padding-top: 0;
+               }
+             }
+           }
+         }
+       }
+     }
+   }
+
+   @include respond-above(md) {
+
+     .requirements-bg {
+       background: url("../../assets/imgs/third-block-bg/third-block-bg-1024x755.jpg") no-repeat;
+       height: 755px;
+       width: auto;
+
+       .requirements-container {
+
+         .requirements-title {
+           margin-bottom: 25px;
+           text-align: center;
+           max-width: 100%;
+         }
+
+         .requirements-img {
+           background: url("../../assets/imgs/man-laptop-v1.svg") no-repeat;
+           background-position: center center;
+           width: 429px;
+           height: 361px;
+           margin: 0;
+         }
+
+         .requirements-content {
+           padding-top: 15px;
+
+           .requirements-text {
+
+             p {
+               padding-top: 25px;
+               max-width: 448px;
+
+               &:nth-child(1) {
+                 padding-top: 0;
+               }
+
+             }
+           }
+         }
+       }
+     }
+   }
+
+   @include respond-above(lg) {
+
+     .requirements-bg {
+       background: url("../../assets/imgs/third-block-bg/third-block-bg-2560x692.jpg") no-repeat;
+       height: 692px;
+
+       .requirements-container {
+
+         .requirements-title {
+           margin-bottom: 25px;
+           text-align: center;
+           max-width: 100%;
+         }
+
+         .requirements-img {
+           background: url("../../assets/imgs/man-laptop-v1.svg") no-repeat;
+           background-position: center center;
+           width: 429px;
+           height: 361px;
+           margin: 0 auto;
+         }
+
+         .requirements-content {
+           padding-top: 25px;
+
+           .requirements-text {
+
+             p {
+               padding-top: 20px;
+               max-width: 560px;
+
+               &:nth-child(1) {
+                 padding-top: 0;
+               }
+             }
+           }
+         }
+       }
+     }
+   }
+ }
+
+ //  users
+ .users-box {
+   @include respond-above(xs) {
+     .users-title {
+       margin-bottom: 10px;
+     }
+
+     .user-text {
+       max-width: 190px;
+     }
+
+     .users-container {
+       margin-bottom: 25px;
+     }
+   }
+
+   @include respond-above(sm) {
+
+     .user-text {
+       max-width: 100%;
+       margin-bottom: 30px;
+     }
+
+     .users-container {
+       margin-bottom: 0;
+     }
+   }
+
+   @include respond-above(md) {
+     .users-title {
+       margin-bottom: 0;
+     }
+
+     .user-text {
+       padding-top: 15px;
+       margin-bottom: 0;
+     }
+
+     .users-container {
+       padding-top: 5px;
+     }
+   }
+
+   @include respond-above(lg) {
+     .users-title {
+       margin-bottom: 15px;
+     }
+
+     .user-text {
+       padding-top: 0;
+     }
+
+     .users-container {
+       padding-top: 25px;
+     }
+   }
+ }
+
+ //  signUp
+ .sign-up-box {
+   @include respond-above(xs) {
+     .sign-up-title {
+       margin-bottom: 10px;
+     }
+
+     .sign-up-text {
+       max-width: 370px;
+       padding-top: 15px;
+       padding-bottom: 20px;
+       //  margin: 0 auto;
+     }
+
+     .form-container {
+       padding-bottom: 70px;
+     }
+   }
+
+   @include respond-above(sm) {
+     .sign-up-title {
+       margin-bottom: 35px;
+     }
+
+     .sign-up-text {
+       padding-bottom: 20px;
+     }
+
+     .form-container {
+       padding-bottom: 115px;
+     }
+   }
+
+
+   @include respond-above(md) {
+     .sign-up-title {
+       margin-top: 15px;
+       margin-bottom: 10px;
+     }
+
+     .sign-up-text {
+       max-width: 100%;
+     }
+
+     .form-container {
+       padding-top: 0;
+       padding-bottom: 140px;
+     }
+   }
+
+   @include respond-above(lg) {
+     .sign-up-title {
+       margin-top: 25px;
+       margin-bottom: 5px;
+     }
+
+     .form-container {
+       padding-top: 0;
+       padding-bottom: 150px;
+     }
+   }
+ }

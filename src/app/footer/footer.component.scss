@@ -1,0 +1,168 @@
+@import "../theme/styles/style.scss";
+
+@include respond-above(xs) {
+  .page-footer {
+
+    .menu-container {
+      padding: 35px 0 30px 0;
+
+      .nav-links {
+        width: 455px;
+        padding-top: 20px;
+      }
+
+      .logo {
+        width: 134px;
+        height: 24px;
+        background: url(../../assets/logo/logo_white.png) no-repeat center/cover;
+      }
+    }
+
+    .line {
+      border-bottom: 1px solid $secondary-light;
+      height: 1px;
+      margin-bottom: 30px;
+    }
+
+    .links-container {
+      height: 85px;
+
+      .box-links {
+        height: 100%;
+
+        span {
+          line-height: 18px;
+        }
+
+        .icon-mail {
+          background: url("../../assets/icons/mail.svg") no-repeat center/cover;
+          width: 24px;
+          height: 18px;
+        }
+
+        .icon-phone {
+          background: url("../../assets/icons/phone.svg") no-repeat center/cover;
+          width: 20px;
+          height: 20px;
+        }
+
+        .icon-mobile {
+          background: url("../../assets/icons/cellphone.svg") no-repeat center/contain;
+          width: 16px;
+          height: 26px;
+        }
+
+        .icon-container {
+          width: 26px;
+          margin-right: 10px;
+
+          .icon-contact {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+
+        .text-contact {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .footer-copyright {
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      .social-links {
+        width: 220px;
+
+        //   .social-icon {
+        //     width: 26px;
+        //     height: 26px;
+        //     display: inline-block;
+        //   }
+
+        //   .in-icon {
+        //     background: url("../../assets/icons/linkedin.svg") no-repeat center/cover;
+        //   }
+
+        //   .inst-icon {
+        //     background: url("../../assets/icons/instagram.svg") no-repeat center/cover;
+        //   }
+
+        //   .tw-icon {
+        //     background: url("../../assets/icons/twitter.svg") no-repeat center/cover;
+        //   }
+
+        //   .p-icon {
+        //     background: url("../../assets/icons/pinterest.svg") no-repeat center/cover;
+        //   }
+      }
+
+      .copyright-link {
+        padding-top: 15px;
+      }
+    }
+  }
+
+  .text-right li {
+    text-align: right;
+  }
+}
+
+@include respond-above(sm) {
+  .page-footer {
+    .menu-container {
+      padding: 27px 0 25px 0;
+
+      .nav-links {
+        padding-top: 0;
+      }
+
+      .logo {
+        height: 32px;
+      }
+    }
+
+    .links-container {
+      height: 110px;
+    }
+
+    .footer-copyright {
+      padding-top: 30px;
+
+      .copyright-link {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+@include respond-above(md) {
+  .page-footer {
+
+    .links-container {
+      .box-links {
+        .text-contact {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include respond-above(lg) {
+  .page-footer {
+
+    .links-container {
+      box-sizing: content-box !important;
+    }
+
+    .line {
+      box-sizing: border-box;
+    }
+
+    .footer-copyright {
+      box-sizing: content-box !important;
+    }
+  }
+}

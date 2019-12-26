@@ -1,0 +1,21 @@
+@import "../../../theme/styles/style.scss";
+
+.dialog-box {
+  height: 100%;
+  border: 4px;
+
+  .dialog-text {
+    max-width: 200px;
+    margin-bottom: 35px;
+
+    .title {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+button {
+  border: none;
+  background: none;
+  font-size: 16px;
+}

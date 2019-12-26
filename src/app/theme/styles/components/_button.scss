@@ -1,0 +1,68 @@
+@import '~@angular/material/theming';
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+@import '../base/base';
+@import '../base/typography';
+
+// primary-button
+.primary-button-text {
+  color: $light;
+  @extend .text-button;
+}
+
+.button-text-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.primary-button {
+  border: none;
+  width: 290px;
+  height: 40px;
+  background-color: $primary;
+  border-radius: 4px;
+  position: relative;
+  @extend .text-button;
+
+  @include breakpoint(xs) {
+    display: inline-block;
+  }
+
+  @include breakpoint(sm) {
+    display: block;
+  }
+}
+
+.primary-button:hover {
+  background-color: $primary-hover;
+}
+
+.primary-button:disabled {
+  background-color: $disabled;
+  color: $disabled-text;
+}
+
+.primary-button[disabled] .primary-button-text {
+  color: $disabled-text;
+}
+
+// secondary-button
+.secondary-button {
+  width: 290px;
+  height: 40px;
+  border: 2px solid $primary;
+  border-radius: 4px;
+  display: block;
+  color: $primary;
+  @extend .text-button;
+  background-color: $light;
+  margin: auto;
+}
+
+.secondary-button:hover {
+  border-color: $primary-hover;
+  color: $primary-hover;
+  background-color: $primary-hover-bg;
+}

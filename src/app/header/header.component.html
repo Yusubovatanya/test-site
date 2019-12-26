@@ -1,0 +1,96 @@
+<div class="header" id="home">
+  <div class="header-toolbar wrapper">
+    <mat-toolbar class="bg-white " fxLayout="row" fxLayoutAlign="space-between center">
+      <a mat-button class="companyName" routerLink="/">
+        <span>
+          <div class="logo"></div>
+        </span>
+      </a>
+      <div fxShow="true" fxHide.lt-md="true" class="nav-links" fxLayout="row" fxLayoutAlign="space-between center">
+        <!-- <a mat-button [routerLink]="['/']" [fragment]="'about-me'">About me</a> -->
+        <!-- <a mat-button pageScrollhref="section#about-me">About me</a> -->
+        <a mat-button pageScroll [pageScrollDuration]="2000" [pageScrollEasing]="myEasing" href="#about-me">About me</a>
+        <a mat-button pageScroll [pageScrollDuration]="2000" [pageScrollEasing]="myEasing"
+          href="#relationships">Relationships</a>
+        <a mat-button pageScroll [pageScrollDuration]="2000" [pageScrollEasing]="myEasing"
+          href="#requirements">Requirements</a>
+        <a mat-button pageScroll [pageScrollDuration]="2000" [pageScrollEasing]="myEasing" href="#users">Users</a>
+        <a mat-button pageScroll [pageScrollDuration]="2000" [pageScrollEasing]="myEasing" href="#signUp">Sign up</a>
+      </div>
+      <div class="user-actions" fxShow="true" fxHide.lt-md="true">
+        <ul class="nav" fxLayout="row">
+          <li class="nav-user">
+            <p>{{user.name}}</p>
+            <p class="disabled-text">{{user.email}}</p>
+          </li>
+          <li>
+            <a type="button" href="/">
+              <div class="avatar" [ngStyle]="{
+                  'background': 'url('+ user?.photo +')', 
+                  'background-size': 'cover',
+                  'background-position-x': 'center',
+                  'background-position-y': 'top'
+                }">
+              </div>
+            </a>
+          </li>
+          <li fxLayout="row" fxLayoutAlign="center center">
+            <a type="button" class="sing-out-link" href="#">
+              <p class="sign-out-icon"></p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div fxShow="true" fxHide.gt-sm="true">
+        <button mat-icon-button (click)="sidenav.toggle()" fxLayout="row" fxLayoutAlign="center center" class="menu-button">
+          <p class="menu-icon"></p>
+        </button>
+      </div>
+    </mat-toolbar>
+  </div>
+  <mat-sidenav #sidenav color="primary" fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true"
+    class="sidenav">
+    <div class="sidenav-user">
+      <a type="button" href="/">
+        <div class="avatar" [ngStyle]="{
+          'background': 'url('+ user?.photo +')', 
+          'background-size': 'cover',
+          'background-position-x': 'center',
+          'background-position-y': 'top'
+        }">
+        </div>
+      </a>
+      <p class="p-20 user-name text-ellipsis">{{user.name}}</p>
+      <p class="disabled-text text-ellipsis">{{user.email}}</p>
+    </div>
+    <div class="sidenav-menu">
+      <ul fxLayout="column">
+        <li (click)="close('toggle button')">
+          <a mat-button pageScroll [pageScrollDuration]="2000" [pageScrollEasing]="myEasing" href="#about-me">About
+            me</a>
+        </li>
+        <li (click)="close('toggle button')">
+          <a mat-button pageScroll [pageScrollDuration]="2000" [pageScrollEasing]="myEasing"
+            href="#relationships">Relationships</a></li>
+        <li (click)="close('toggle button')">
+          <a mat-button pageScroll [pageScrollDuration]="2000" [pageScrollEasing]="myEasing"
+            href="#requirements">Requirements</a></li>
+        <li (click)="close('toggle button')">
+          <a mat-button pageScroll [pageScrollDuration]="2000" [pageScrollEasing]="myEasing" href="#users">Users</a>
+        </li>
+        <li (click)="close('toggle button')">
+          <a mat-button pageScroll [pageScrollDuration]="2000" [pageScrollEasing]="myEasing" href="#signUp">Sign up</a>
+        </li>
+        <li (click)="close('toggle button')">
+          <a mat-button pageScroll [pageScrollDuration]="2000" [pageScrollEasing]="myEasing" href="#singOut">Sing Out</a>
+        </li>
+      </ul>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-container fxFlexFill class="example-container">
+
+    <mat-sidenav-content fxFlexFill>
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,51 @@
+@import '~@angular/material/theming';
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+@import '../base/base';
+@import '../base/typography';
+
+// link color
+a:active,
+a:active span {
+  color: $secondary;
+}
+
+a:hover,
+a:focus,
+a:hover span,
+a:focus span {
+  color: $primary;
+}
+
+// link secondary-bg
+// .secondary-link,
+.secondary-link a span,
+.secondary-link a {
+  color: $light;
+}
+
+.secondary-link a:hover,
+.secondary-link a:focus,
+.secondary-link a:hover span,
+.secondary-link a:focus span {
+  color: $primary;
+}
+
+// text-link
+.text-link {
+  color: $primary;
+  font-weight: bold;
+}
+
+.text-link:hover,
+.text-link:focus,
+.text-link:hover span,
+.text-link:focus span {
+  color: $primary-hover;
+}
+
+a:hover svg g {
+  stroke: $primary;
+  fill: $primary;
+  ;
+}

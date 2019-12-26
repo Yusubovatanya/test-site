@@ -1,0 +1,18 @@
+<div class="user-card" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="start start" fxLayout="column"
+  fxLayoutAlign="center center">
+  <div class="user-img" *ngIf="user.photo" [ngStyle]="{
+    'background': getImg(user.photo), 
+    'background-size': 'cover',
+    'background-position-x': 'center',
+    'background-position-y': 'top'
+  }" fxFlex="0 0 auto">
+  </div>
+  <div class="user-content" fxFlex="1 1 auto">
+    <h4 class="user-name">{{user.name}}</h4>
+    <div class="user-info">
+      <p class="text-ellipsis p-14">{{user.position}}</p>
+      <p class="text-ellipsis p-14 text-fadedHighlight">{{user.email}}</p>
+      <p class="text-ellipsis p-14">{{user.phone}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+@import "../../../theme/styles/style.scss";
+
+@include breakpoint(xs) {
+  .user-card {
+    min-height: 198px;
+    padding-top: 25px;
+    overflow: initial;
+
+    .user-img {
+      width: 70px;
+      max-width: 100%;
+      height: 70px;
+      border-radius: 50%;
+    }
+
+    .user-content {
+      padding-left: 0;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      max-width: 290px;
+      padding-top: 10px;
+
+      .user-info {
+        padding-top: 5px;
+      }
+    }
+  }
+}
+
+@include breakpoint(sm) {
+  .user-card {
+    padding-top: 10px;
+    overflow: hidden;
+    height: 230px;
+
+    .user-content {
+      max-width: 220px;
+      padding-top: 10px;
+      padding-left: 10px;
+
+      .user-info {
+        padding-top: 5px;
+      }
+    }
+  }
+}
+
+@include breakpoint(md) {
+  .user-card {
+    height: 220px;
+    padding-top: 50px;
+
+    .user-content {
+      max-width: 220px;
+      text-align: left;
+      padding-top: 25px;
+    }
+  }
+}
+
+@include breakpoint(lg) {
+  .user-card {
+    height: 168px;
+    padding-top: 30px;
+
+    .user-content {
+      max-width: 270px;
+    }
+  }
+}

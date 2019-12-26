@@ -1,0 +1,154 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+
+.text-family-overpass {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 600;
+}
+
+.text-family-overpass-regular {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
+}
+
+.text-family-sans-pro {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+}
+
+.text-family-sans-pro-bold {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+}
+
+body {
+  @extend .text-family-overpass;
+}
+
+h1 {
+  @extend .text-family-overpass;
+
+  @include breakpoint(xs) {
+    @include text-size(30px, 36px);
+  }
+
+  @include breakpoint(sm) {
+    @include text-size(42px, 51px);
+  }
+
+  @include breakpoint(md) {
+    @include text-size(50px, 60px);
+  }
+}
+
+h2 {
+  @extend .text-family-overpass;
+
+  @include breakpoint(xs) {
+    @include text-size(26px, 31px);
+  }
+
+  @include breakpoint(sm) {
+    @include text-size(42px, 51px);
+  }
+}
+
+h3 {
+  @extend .text-family-overpass;
+
+  @include breakpoint(xs) {
+    @include text-size(22px, 26px);
+  }
+
+  @include breakpoint(sm) {
+    @include text-size(26px, 31px);
+  }
+}
+
+h4 {
+  @extend .text-family-overpass;
+  @include text-size(22px, 26px);
+}
+
+h5 {
+  @extend .text-family-sans-pro;
+
+  @include breakpoint(xs) {
+    @include text-size(16px, 22px);
+  }
+
+  @include breakpoint(sm) {
+    @include text-size(18px, 18px);
+  }
+}
+
+p,
+span,
+a {
+  @extend .p-16;
+  color: $dark;
+}
+
+.p-14,
+.p-20,
+.p-18,
+.p-16 {
+  @extend .text-family-sans-pro;
+}
+
+.p-12 {
+  @include text-size(12px, inherit);
+}
+
+.p-22 {
+  @include text-size(22px, inherit);
+}
+
+.p-20 {
+  @include text-size(20px, inherit);
+}
+
+.p-18 {
+  @include text-size(18px, 26px);
+}
+
+.p-16 {
+  @include text-size(16px, 22px);
+}
+
+.p-14 {
+  @include text-size(14px, 20px);
+}
+
+
+.text-fadedHighlight {
+  color: $fadedHighlight;
+}
+
+.text-light {
+  color: $light;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.error-text {
+  color: $warn !important;
+}
+
+.disabled-text {
+  color: $disabled-text;
+}
+
+.error-text {
+  color: $warn;
+}
+
+.text-button {
+  font-weight: bold;
+  @extend .text-family-sans-pro-bold;
+  font-size: 20px;
+}

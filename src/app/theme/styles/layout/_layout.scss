@@ -1,0 +1,47 @@
+@import '~@angular/material/theming';
+@import '../abstracts/mixins';
+
+.wrapper {
+  @include breakpoint(xs) {
+    box-sizing: content-box;
+    min-width: 290px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  @include breakpoint(sm) {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  @include breakpoint(md) {
+    max-width: 930px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  @include breakpoint(lg) {
+    box-sizing: content-box;
+    max-width: 1140px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+}
+
+.container {
+  @include breakpoint(xs) {
+    padding-top: 65px;
+  }
+
+  @include breakpoint(sm) {
+    padding-top: 110px;
+  }
+
+  @include breakpoint(md) {
+    padding-top: 130px;
+  }
+}
+
+.m-auto {
+  margin: 0 auto;
+}

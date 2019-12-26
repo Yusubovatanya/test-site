@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+
+
+// color
+.bg-white {
+  background-color: $light;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.mat-snack-bar-container {
+  background-color: #fff;
+}
+
+.bg-secondary {
+  background-color: $secondary;
+}

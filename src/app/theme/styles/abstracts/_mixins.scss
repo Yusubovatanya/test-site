@@ -1,0 +1,48 @@
+@import 'variables';
+
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{ map-get( $breakpoints, $breakpoint ) }) {
+      @content;
+    }
+  }
+
+  @else if type_of($breakpoint)==number and unit($breakpoint)==px or unit($breakpoint)==em or unit($breakpoint)==rem {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "No value could be retrieved from `#{$breakpoint}`. "
+    +"It is either not defined in the `$breakpoints` map, or it is an invalid number of px, em, or rem.";
+  }
+}
+
+@mixin text-size($size, $line-height) {
+  font-size: $size;
+  line-height: $line-height;
+}
+
+
+// Respond above.
+@mixin respond-above($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}

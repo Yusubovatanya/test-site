@@ -1,0 +1,88 @@
+  <form [formGroup]="registerForm" #form="ngForm" class="register-form">
+
+    <div class="top-form" fxLayout.gt-xs="row" fxLayout="column" fxLayoutAlign="space-between center"
+      fxLayoutGap.gt-xs="30px" fxLayoutGap="0">
+      <div fxFlex="1 1" class="form-field">
+        <input placeholder="Your name" name="userName" formControlName="userName" class="field-form"
+          [ngClass]="getStatusField('userName')">
+        <p class="legend placeholder-text p-12 disabled-text" [ngClass]="showLegend('userName')">Name</p>
+        <!-- <p *ngIf="formErrors.userName" class="placeholder-text p-12 error-text error-text">
+          Error
+        </p> -->
+        <p *ngIf="isFieldValid('userName')" class="placeholder-text p-12 error-text error-text">
+          {{formErrors.userName}}
+        </p>
+      </div>
+      <div fxFlex="1 1" class="form-field">
+        <input placeholder="Your email" name="userEmail" formControlName="userEmail" class="field-form"
+          [ngClass]="getStatusField('userEmail')">
+        <p class="legend placeholder-text p-12 disabled-text" [ngClass]="showLegend('userEmail')">Email</p>
+        <!-- <p *ngIf="formErrors.userEmail" class="placeholder-text p-12 error-text error-text">
+          {{formErrors.userEmail}}
+        </p> -->
+        <p *ngIf="isFieldValid('userEmail')" class="placeholder-text p-12 error-text error-text">
+          {{formErrors.userEmail}}
+        </p>
+      </div>
+      <div fxFlex="1 1" class="form-field">
+        <input placeholder="+38 (___)  ___ __ __" name="userPhone" formControlName="userPhone" class="field-form"
+          [ngClass]="getStatusField('userPhone')">
+        <p class="legend placeholder-text p-12 disabled-text" [ngClass]="showLegend('userPhone')">Phone</p>
+        <p class="placeholder-text p-12 error-text error-text" *ngIf="formErrors.userPhone">
+          Error
+        </p>
+      </div>
+    </div>
+    <div class="bottom-form" fxLayout.gt-xs="row" fxLayout="column" fxLayoutAlign="space-between center"
+      fxLayoutGap.gt-xs="30px" fxLayoutGap="0">
+      <div fxFlex="1 1" class="select-box form-field" ngxOutside
+        (clickedOutside)="togglePositionStatus && (togglePositionStatus = false)">
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="select-field" (click)="togglePosition()">
+          <input class="hide-position" name="position" formControlName="position" [value]="togglePositionSelected">
+          <span>
+            <span class="position-option" *ngIf="!!togglePositionSelected; else noPosition">
+              {{ togglePositionSelected.name }}
+            </span>
+            <ng-template #noPosition>
+              <span class="position-option">Select your position</span>
+            </ng-template>
+          </span>
+          <p class="icon-position" style="cursor: pointer"></p>
+        </div>
+        <p class="placeholder-text p-12 error-text error-text" *ngIf="formErrors.position">
+          Error
+        </p>
+        <div class="position-list" *ngIf="!!togglePositionStatus">
+          <ul class="">
+            <li [ngClass]="{'active-option': position.isActiveOption}" *ngFor="let position of positions"
+              (click)="selectPositionFromList(position)">
+              {{ position.name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div fxFlex="1 1" class="upload-photo form-field">
+        <label for="custom-file-upload" class="label-photo input-field field-enabled"
+          [ngClass]="getStatusField('photo')">
+          <span *ngIf="!file;else isFile" class="placeholder-text disabled-text">Upload your photo</span>
+          <ng-template #isFile>
+            <p class="placeholder-text disabled-text">{{file.name}}</p>
+          </ng-template>
+          <input type="file" id="custom-file-upload" name="photo" formControlName="photo"
+            accept="image/jpg, image/jpeg " class="field-form" (change)="setFile()" #importSelector />
+        </label>
+        <p *ngIf="!formErrors.photo; else errPhoto" class="placeholder-text p-12 disabled-text">
+          File format jpg up to 5 MB, the minimum size of 70x70px
+        </p>
+        <ng-template #errPhoto>
+          <p *ngIf="formErrors.photo" class="placeholder-text p-12 error-text error-text">
+            {{formErrors.photo}}
+          </p>
+        </ng-template>
+      </div>
+    </div>
+    <button class="primary-button primary-button-text m-auto" (click)="create()" [disabled]="!registerForm.valid">Sign
+      Up
+    </button>
+  </form>
